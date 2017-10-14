@@ -4,15 +4,19 @@
          xmlns="http://java.sun.com/xml/ns/j2ee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
-         http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" >
+         http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
     <display-name>AgileQa</display-name>
 
-  <welcome-file-list>
-    <welcome-file>
-      index.jsp
-    </welcome-file>
-  </welcome-file-list>
- <servlet>
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+
+    <listener>
+        <listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
+    </listener>
+
+    <servlet>
         <servlet-name>web</servlet-name>
         <servlet-class>
             org.springframework.web.servlet.DispatcherServlet
@@ -21,7 +25,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>web</servlet-name>
-        <url-pattern>/index.jsp</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 
 </web-app>
