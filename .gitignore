@@ -7,4 +7,6 @@ target/
 webapp/*
 *.ipr
 *.iws
+dataSources/*
+.ideaDataSources/*
 

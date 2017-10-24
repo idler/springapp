@@ -6,7 +6,7 @@ import javax.persistence.*;
  * Created by max on 14.10.2017.
  */
 @Entity
-@Table(name = "PERSON")
+@Table(name = "person")
 public class User {
 
     public Integer getId() {
@@ -19,7 +19,7 @@ public class User {
 
     @Id
     @Column(name = "ID")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Integer id;
     @Column(name = "name")
     private String name;

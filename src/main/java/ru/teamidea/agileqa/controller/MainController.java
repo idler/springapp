@@ -1,6 +1,10 @@
 package ru.teamidea.agileqa.controller;
 
 
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -11,6 +15,8 @@ public class MainController{
 
 //    @Resource(name = "dataSource")
 //    private DataSource dataSource;
+@Autowired
+private SessionFactory sessionFactory;
 
     @RequestMapping("/hello")
     public String hello() {
@@ -25,6 +31,15 @@ public class MainController{
         u.setAge(9);
 
 
+        Session session;
+
+        try {
+            session = sessionFactory.getCurrentSession();
+        } catch (HibernateException e) {
+            session = sessionFactory.openSession();
+        }
+
+session.save(u);
         return u;
     }
 
