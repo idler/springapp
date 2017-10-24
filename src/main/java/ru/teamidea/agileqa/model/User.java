@@ -1,10 +1,29 @@
 package ru.teamidea.agileqa.model;
 
+import javax.persistence.*;
+
 /**
  * Created by max on 14.10.2017.
  */
+@Entity
+@Table(name = "PERSON")
 public class User {
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    @Id
+    @Column(name = "ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @Column(name = "name")
     private String name;
+    @Column(name="age")
     private int age;
 
     public String getName() {

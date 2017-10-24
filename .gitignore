@@ -4,4 +4,7 @@ target/
 *.class
 *.jar
 *.war
+webapp/*
+*.ipr
+*.iws
 

@@ -1,17 +1,16 @@
 package ru.teamidea.agileqa.controller;
 
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import ru.teamidea.agileqa.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.util.Objects;
+import ru.teamidea.agileqa.model.User;
 
 @Controller
 public class MainController{
+
+//    @Resource(name = "dataSource")
+//    private DataSource dataSource;
 
     @RequestMapping("/hello")
     public String hello() {
@@ -24,6 +23,8 @@ public class MainController{
         User u = new User();
         u.setName("Vassa");
         u.setAge(9);
+
+
         return u;
     }
 
