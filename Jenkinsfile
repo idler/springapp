@@ -15,8 +15,6 @@ dir ("build"){
     
     
   stage ('test'){
-    def docker = tool 'docker'
-    sh "${docker} build mywar ."
-    
+    agent { dockerfile true }
   }
 }
