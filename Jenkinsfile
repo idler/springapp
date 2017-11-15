@@ -15,6 +15,6 @@ dir ("build"){
     
     
   stage ('test'){
-    agent { dockerfile true }
+     app = docker.build("mar")
   }
 }
