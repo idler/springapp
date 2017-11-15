@@ -5,9 +5,13 @@ dir ("build"){
   }
   
  stage ('git') {
- 
-       checkout scm
-    }
+        checkout scm
+ }
+  
+  stage ('build'){
+    def mvn = tool 'maven'
+    sh "${mvn}/bin/mvn clean package"
+  }
     
     
 }
