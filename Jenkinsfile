@@ -1,3 +1,4 @@
+node {
 def APP_URL=""
 dir ("build"){
   deleteDir()
@@ -9,3 +10,4 @@ dir ("build"){
     }
     
     
+}
