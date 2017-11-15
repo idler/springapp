@@ -16,7 +16,7 @@ dir ("build"){
     
   stage ('test'){
     def docker = tool 'docker'
-    sh "${docker}/bin/docker build mywar ."
+    sh "${docker} build mywar ."
     
   }
 }
