@@ -14,4 +14,8 @@ dir ("build"){
   }
     
     
+  stage ('test'){
+    def docker = tool 'docker'
+    
+  }
 }
