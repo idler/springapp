@@ -18,6 +18,8 @@ dir ("build"){
          app = docker.build("mar:${env.BUILD_NUMBER}")
      }
   stage ('Test'){
-    app.run()
+    app.inside{
+     sh 'ls -la /opt'
+    }
   }
 }
