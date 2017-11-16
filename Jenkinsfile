@@ -15,10 +15,9 @@ dir ("build"){
     
     
   stage ('Docker'){
-         app = docker.build("mar:${env.BUILD_NUMBER}")
+         app = docker.build("spring:${env.BUILD_NUMBER}")
          
-         docker.withRegistry('http://10.142.0.4:80') { 
-           app.push("${env.BUILD_NUMBER}")
-         }
+           app.withRun('-p8080:8080 -d --name tomcat');
+         sh 'curl -i http://localhost:8080/'
      }
   }
