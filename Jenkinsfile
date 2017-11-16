@@ -14,7 +14,10 @@ dir ("build"){
   }
     
     
-  stage ('test'){
+  stage ('Docker'){
          app = docker.build("mar:${env.BUILD_NUMBER}")
      }
+  stage ('Test'){
+    app.inside('ls -al /')
+  }
 }
