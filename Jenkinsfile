@@ -17,9 +17,9 @@ dir ("build"){
   stage ('Docker'){
          app = docker.build("spring:${env.BUILD_NUMBER}")
          
-           def cont = app.run('-p8080:8080 -d --name tomcat');
+           def cont = app.run('-p127.0.0.1:8080:8080 -d --name tomcat');
          echo 'sleeping while catalina starting'
          sh 'sleep 25'
-         sh 'curl -i http://localhost:8080/'
+         sh 'curl -i http://127.0.0.1:8080/'
      }
   }
