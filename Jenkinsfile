@@ -21,7 +21,5 @@ dir ("build"){
          echo 'sleeping while catalina starting'
          sh 'sleep 25'
          sh 'curl -i http://localhost:8080/'
-         cont.stop()
-         cont.rm()
      }
   }
