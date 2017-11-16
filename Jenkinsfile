@@ -18,8 +18,7 @@ dir ("build"){
          app = docker.build("mar:${env.BUILD_NUMBER}")
      }
   stage ('Test'){
-    app.inside{
-     sh 'ls /'
-    }
+docker.withRegistry('http://docker.antonoff.info/') {
+    app.push "mar:${env.BUILD_NUMBER}"
   }
 }
