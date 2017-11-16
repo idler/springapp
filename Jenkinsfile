@@ -15,6 +15,8 @@ dir ("build"){
     
     
   stage ('test'){
-     app = docker.build("mar")
+     docker.withRegistry('http://10.142.0.4:80/') {
+         app = docker.build("mar:${env.BUILD_NUMBER}")
+     }
   }
 }
