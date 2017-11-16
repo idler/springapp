@@ -19,7 +19,7 @@ dir ("build"){
      }
   stage ('Test'){
     app.inside{
-     sh 'ls -la /opt'
+     sh 'ls -laR /usr/local/tomcat/webapps/'
     }
   }
 }
