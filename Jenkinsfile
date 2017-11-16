@@ -19,6 +19,6 @@ dir ("build"){
      }
   stage ('Test'){
 docker.withRegistry('http://docker.antonoff.info/') {
-    app.push "mar:${env.BUILD_NUMBER}"
+    app.push ("mar:${env.BUILD_NUMBER}")
   }
 }
