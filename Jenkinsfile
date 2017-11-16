@@ -1,4 +1,4 @@
-node {
+node ('docker') {
 def app
 def cont
 dir ("build"){
