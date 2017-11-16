@@ -11,7 +11,6 @@ dir ("build"){
   stage ('build'){
     def mvn = tool 'maven'
     sh "${mvn}/bin/mvn clean package"
-    sh 'docker images'
   }
     
     
