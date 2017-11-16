@@ -1,5 +1,6 @@
 node {
 def app
+def cont
 dir ("build"){
   deleteDir()
   }
@@ -17,9 +18,12 @@ dir ("build"){
   stage ('Docker'){
          app = docker.build("spring:${env.BUILD_NUMBER}")
          
-           def cont = app.run('-p127.0.0.1:8082:8082 -d --name tomcat');
+         cont = app.run('-p127.0.0.1:8082:8082 -d --name tomcat');
          echo 'sleeping while catalina starting'
-         sh 'sleep 85'
+         sh 'sleep 125'
+  }
+  
+  stage ('Simple test') {
          sh 'curl -i http://127.0.0.1:8082/'
          cont.stop()
      }
