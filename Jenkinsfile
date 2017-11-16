@@ -1,4 +1,5 @@
 node {
+ agent { dockerfile true }
 def APP_URL=""
 dir ("build"){
   deleteDir()
@@ -17,9 +18,5 @@ dir ("build"){
   stage ('Docker'){
          app = docker.build("mar:${env.BUILD_NUMBER}")
      }
-  stage ('Test'){
-    docker.withRegistry('http://docker.antonoff.info/') {
-       app.push ("mar:${env.BUILD_NUMBER}")
-    }
   }
 }
