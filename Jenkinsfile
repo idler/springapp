@@ -19,4 +19,3 @@ dir ("build"){
          app = docker.build("mar:${env.BUILD_NUMBER}")
      }
   }
-}
