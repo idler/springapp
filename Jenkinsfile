@@ -21,5 +21,6 @@ dir ("build"){
          echo 'sleeping while catalina starting'
          sh 'sleep 25'
          sh 'curl -i http://127.0.0.1:8082/'
+
      }
   }
