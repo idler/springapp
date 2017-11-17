@@ -20,7 +20,7 @@ dir ("build"){
          
          cont = app.run('-p127.0.0.1:8082:8082 -d --name tomcat');
          echo 'sleeping while catalina starting'
-         sh 'sleep 125'
+         sh 'sleep 8'
   }
   
   stage ('Simple test') {
